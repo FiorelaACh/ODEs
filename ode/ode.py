@@ -20,7 +20,7 @@ def func(x, t):
         t (float): Independent variable or time.
 
     Returns:
-        float: The sum operation of `x` and `t`. 
+        (float): The sum operation of `x` and `t`. 
     """
 
     return x + t
@@ -39,7 +39,7 @@ def euler(f, x, t, h):
         h (float): Step that separates the time `t` from the next instant `t+h`.
 
     Returns:
-        float: The value of the dependent variable `x` in the time `t+h`. 
+        (float): The value of the dependent variable `x` in the time `t+h`. 
     """
 
     return x + h*f(x, t)
@@ -58,7 +58,7 @@ def rk2(f, x, t, h):
         h (float): Step that separates the time `t` from the next instant `t+h`.
 
     Returns:
-        float: The value of the dependent variable `x` in the time `t+h` following the RK2 method. 
+        (float): The value of the dependent variable `x` in the time `t+h` following the RK2 method. 
     """
     k1 = h * f(x, t)
     k2 = h * f(x + k1/2, t + h/2)
@@ -79,7 +79,7 @@ def rk4(f, x, t, h):
         h (float): Step that separates the time `t` from the next instant `t+h`.
 
     Returns:
-        float: The value of the dependent variable `x` in the time `t+h` following the RK4 method. 
+        (float): The value of the dependent variable `x` in the time `t+h` following the RK4 method. 
     """
     k1 = h * f(x, t) 
     k2 = h * f(x + k1/2, t + h/2)
