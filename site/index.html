@@ -392,19 +392,19 @@
 <h2 id="type-of-problems-to-solve">Type of problems to solve</h2>
 <p>This methods resolve ordinary diffential equations (ODEs) rule by a initial condition, such as:</p>
 <div class="arithmatex">\[
-\frac{\text d x}{\text d t} = f(x, t) \quad \text{con} \quad x(t=0)=x_{0}
+\frac{\text d x}{\text d t} = f(x, t) \quad \text{, where} \quad x(t=0)=x_{0}
 \]</div>
 <h2 id="euler-method">Euler Method</h2>
-<p>Is a simple Taylor expansion by a timestep <strong>h</strong> (which supposed to be small), in this case the value of a funtion <code>x(t)</code> advanced in each timestep <strong>h</strong> as:    </p>
+<p>Is a simple Taylor expansion by a timestep <strong>h</strong> (which supposed to be small).  In this case the value of a funtion <code>x(t)</code> advanced in each timestep <strong>h</strong> as:    </p>
 <div class="arithmatex">\[
 \boxed{x(t + h) = x(t) + h f(x,t)}
 \]</div>
-<p>The method holds an approximation error that has a linear dependece of <strong>h</strong> (<span class="arithmatex">\(O(h)\)</span>), when the amount of timesteps taken in between the start and the end is define as <span class="arithmatex">\((a +b) / h\)</span>.</p>
-<p>The aplication of the method , follows the next squeme:</p>
+<p>The method holds an approximation error that has a linear dependece of <strong>h</strong> (<span class="arithmatex">\(O(h)\)</span>), when the amount of timesteps taken in between the start and the end is defined as <span class="arithmatex">\((a +b) / h\)</span>.</p>
+<p>The aplication of the method follows the next squeme:</p>
 <ul>
-<li>Staing point on: <span class="arithmatex">\(t = t_{0}\)</span> and <span class="arithmatex">\(x = x_{0}\)</span>.</li>
-<li>The times gets discretized for an equidistant timestep <strong>h</strong>, and it's identifed as <span class="arithmatex">\(t_{i}\)</span></li>
-<li>For each <span class="arithmatex">\(t_{i}\)</span> the funcition is calculated as: <span class="arithmatex">\(x_{i} = x_{i-1} + h f(x_{i})\)</span></li>
+<li>Staing point on <span class="arithmatex">\(t = t_{0}\)</span> and <span class="arithmatex">\(x = x_{0}\)</span>.</li>
+<li>The times gets discretized for an equidistant timestep <strong>h</strong>, and it is identifed as <span class="arithmatex">\(t_{i}\)</span></li>
+<li>For each <span class="arithmatex">\(t_{i}\)</span> the function is calculated as: <span class="arithmatex">\(x_{i} = x_{i-1} + h f(x_{i})\)</span></li>
 </ul>
 <h2 id="runge-kutta-methods">Runge-Kutta Methods</h2>
 <p>This area family of numerical methods of different orders that have a better aproximation without taking into acount higther terms of Taylor's expansion.</p>
@@ -414,14 +414,14 @@
 \boxed{x(t + h) = x(t) + hf[x(t + h/2), t + h/2] + O(h^3)}
 \]</div>
 <p>The expansion at a midponit of <span class="arithmatex">\(x(t)\)</span> and <span class="arithmatex">\(x(x +h)\)</span> cancel the terms with <span class="arithmatex">\(O(h^2)\)</span>; which changes the approximation error to the order of <span class="arithmatex">\(O(h^{3})\)</span>,$, which is very benefitial computacionally.</p>
-<p>To aplied this method it's required to get the value in the midpoint <span class="arithmatex">\(x(t + h/2)\)</span> with the Euler method at a timestep h/2 (<span class="arithmatex">\((x + h/2) = x(t) + \frac{h}{2}f(x,t)\)</span>). Which leaves the RK2 method equations:</p>
+<p>To aplied this method it's required to get the value in the midpoint <span class="arithmatex">\(x(t + h/2)\)</span> with the Euler method at a timestep h/2 (<span class="arithmatex">\((x + h/2) = x(t) + \frac{h}{2}f(x,t)\)</span>), which implies the RK2 method equations can be written as:</p>
 <ul>
 <li><span class="arithmatex">\(k_{1} = hf(x,t),\)</span></li>
 <li><span class="arithmatex">\(k_{2} = hf\left(x + \frac{k_{1}}{2},t + \frac{h}{2}\right)\)</span></li>
 <li><span class="arithmatex">\(x(t + h) = x(t) + k_{2}\)</span></li>
 </ul>
 <h3 id="fourth-order-runge-kutta-rk4">Fourth Order Runge-Kutta (RK4)</h3>
-<p>The equations for this orden are gotten by the same as for RK2, but evaluating at four points between <span class="arithmatex">\(x(t)\)</span> and <span class="arithmatex">\(x(x +h)\)</span>, leaving a approximation error of <span class="arithmatex">\(O(h^5)\)</span> and a global one of <span class="arithmatex">\(O(h^4)\)</span>. The equations are:</p>
+<p>The equations for this orden are obtained through the same procedure as for RK2, but evaluating at four points between <span class="arithmatex">\(x(t)\)</span> and <span class="arithmatex">\(x(x +h)\)</span>, leaving a approximation error of <span class="arithmatex">\(O(h^5)\)</span> and a global one of <span class="arithmatex">\(O(h^4)\)</span>. The equations are:</p>
 <ul>
 <li><span class="arithmatex">\(k_{1} = hf(x, t)\)</span>,</li>
 <li><span class="arithmatex">\(k_{2} = hf\left(x + \frac{k_{1}}{2}, t+\frac{h}2\right)\)</span>,</li>
@@ -433,7 +433,7 @@
 <h2 id="documentation">Documentation</h2>
 <p>For the documentation of each of this methods (see reference section), there's an example for the ODE:</p>
 <div class="arithmatex">\[
-\frac{\text d x}{\text d t} = x + t \quad \text{con} \quad x(t=0)=x_{0}
+\frac{\text d x}{\text d t} = x + t \quad \text{, where} \quad x(t=0)=x_{0}
 \]</div>
 
 
